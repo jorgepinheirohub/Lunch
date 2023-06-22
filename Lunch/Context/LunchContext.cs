@@ -10,5 +10,7 @@ namespace Lunch.Context
         {}
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<Restaurant> Restaurant { get; set; }
     }
 }

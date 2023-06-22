@@ -14,8 +14,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LunchContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LunchDB")));
+
+// Add Repositories
 builder.Services.AddScoped<UserRepository, UserRepository>();
+builder.Services.AddScoped<RestaurantRepository, RestaurantRepository>();
+
+// Add Services
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
 var app = builder.Build();
 
